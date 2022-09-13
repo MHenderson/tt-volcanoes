@@ -1,10 +1,11 @@
+library(here)
 library(readr)
 library(sf)
 library(tidyverse)
 library(rnaturalearth)
 library(rnaturalearthdata)
 
-eruptions <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-12/eruptions.csv')
+eruptions <- read_csv(here("data-raw", "eruptions.csv"))
 
 eruptions_sf <- eruptions %>%
   st_as_sf(
