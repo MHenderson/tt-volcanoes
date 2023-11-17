@@ -1,0 +1,7 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+eruptions|stem|d16b4fdc4eccd1ed|8d3ab703c3c8dd41|7199b9143a2e7ccc|-339765885||t19678.4457729613s|87f483c77db069b2|235068|rds|local|vector|||0.569||
+eruptions_plot|stem|0f80dc9adc940b76|c1dc76964f138ee2|f1c68e5db7fa96ff|-613189337||t19678.4533025913s|a8f9e1f9e20fb5c7|5187571|rds|local|vector|||0.141|1m22mThe size argument of element_rect is deprecated as of ggplot2 3.4.0.36mℹ39m Please use the linewidth argument instead.|
+plot_eruptions|function|bb08d60587038368|||||||||||||||
+save_eruptions_plot|stem|8b2a656bff1dd5d2|a1cac875ca08cae0|d89cba140832cf7d|1230494510|plot/eruptions.png|t19678.4540442117s|891d96419c1b3bb3|220024|file|local|vector|||0.621|st_point_on_surface may not give correct results for longitudelatitude data|
+volcano|stem|576dbda1737073be|216b38a2367e7167|7199b9143a2e7ccc|-338698306||t19678.4457654614s|4c399c1bf0f1a077|52109|rds|local|vector|||0.695||
+world|stem|3f55f64083d940b9|c1d4cba122f1a1eb|d1aaa8e11002b11f|-1868977180||t19678.4491500448s|1fac9bb0c60d9701|770145|rds|local|vector|||0.931||
