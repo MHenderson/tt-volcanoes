@@ -9,7 +9,7 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("dplyr", "ggplot2", "readr", "rnaturalearth", "sf", "tibble"), # packages that your targets need to run
+  packages = c("dplyr", "ggplot2", "ggrepel", "glue", "lubridate", "readr", "rnaturalearth", "sf", "tibble", "viridis"), # packages that your targets need to run
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -44,7 +44,7 @@ list(
   ),
   tar_target(
     name = save_eruptions_plot,
-    command = ggsave(plot = eruptions_plot, filename = "img/eruptions.png", bg = "white", width = 5, height = 4),
+    command = ggsave(plot = eruptions_plot, filename = "img/eruptions.png", bg = "white", width = 8, height = 8),
     format = "file"
   )
 )

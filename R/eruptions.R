@@ -1,39 +1,50 @@
 plot_eruptions <- function(X, world) {
 
-  eruptions_sf <- X %>%
+  eruptions_to_plot <- X %>%
+    filter(start_year == 1975) %>%
+    filter(end_year == 1975) %>%
+    filter(eruption_category == "Confirmed Eruption") %>%
+    arrange(desc(vei)) %>%
+    slice_head(n = 20) %>%
+    mutate(
+      start = make_date(start_year, start_month, start_day)
+    ) %>%
+    mutate(
+      start_month = month(start, label = TRUE, abbr = FALSE),
+      end_month = month(start, label = TRUE, abbr = FALSE)
+    ) %>%
+    mutate(
+      label = case_when(
+        start_day == end_day ~ glue("{start_day} {end_month}\n{volcano_name} (vei: {vei})"),
+        TRUE ~ glue("{start_day} - {end_day} {end_month}\n{volcano_name} (vei: {vei})")
+      )
+    )
+
+  eruptions_sf <- eruptions_to_plot %>%
     st_as_sf(
       coords = c("longitude", "latitude"),
       crs = 4326,
       agr = "constant"
-    )
+    ) %>%
+    st_transform(crs = st_crs(3832))
 
-  eruptions_to_plot <- eruptions_sf %>%
-    filter(start_year >= 1900) %>%
-    filter(start_year <= 1999) %>%
-    filter(vei >= 4) %>%
-    arrange(desc(vei))
+  countries_to_plot_sf <- world %>%
+    filter(admin != "Greenland") %>%
+    filter(continent != "Antarctica")
 
-  eruptions_to_plot %>%
+  eruptions_sf %>%
     ggplot() +
-    geom_sf(data = world, alpha = .5, size = .2, fill = "chartreuse") +
-    geom_sf(aes(size = vei), alpha = .5, colour = "red") +
-    geom_sf_label(aes(label = volcano_name), data = eruptions_to_plot %>% head(n = 10), nudge_y = 5) +
-    theme_bw() +
-    labs(
-      x        = "",
-      y        = "",
-      title    = "Large Volcano Eruptions 1900 to 1999",
-      subtitle = "(all eruptions with vei > 4)",
-      caption  = "data from The Smithsonian Institution (https://volcano.si.edu/)"
+    geom_sf(data = countries_to_plot_sf, alpha = .5, size = .2, fill = "white") +
+    geom_sf(aes(size = vei), alpha = .5) +
+    geom_label_repel(
+      data = eruptions_sf,
+      aes(label = label, geometry = geometry),
+      stat = "sf_coordinates",
+      min.segment.length = Inf,
+      colour = "blue",
+      segment.colour = "blue"
     ) +
-    theme(
-      panel.background = element_rect(
-        fill     = "deepskyblue3",
-        colour   = "deepskyblue3",
-        size     = 0.5,
-        linetype = "solid"
-      ),
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank()
-    )
+    scale_color_viridis() +
+    theme_void()
+
 }
