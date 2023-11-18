@@ -36,7 +36,7 @@ list(
   ),
   tar_target(
     name = world,
-    command = ne_countries(scale = "medium", returnclass = "sf") |> filter(sovereignt != "Antarctica")
+    command = ne_countries(scale = "medium", returnclass = "sf")
   ),
   tar_target(
     name = eruptions_plot,

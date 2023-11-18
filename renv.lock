@@ -446,16 +446,6 @@
       ],
       "Hash": "b44addadb528a0d227794121c00572a0"
     },
-    "here": {
-      "Package": "here",
-      "Version": "1.0.1",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "rprojroot"
-      ],
-      "Hash": "24b224366f9c2e7534d2344d10d59211"
-    },
     "highr": {
       "Package": "highr",
       "Version": "0.10",
@@ -760,17 +750,6 @@
       ],
       "Hash": "709d852d33178db54b17c722e5b1e594"
     },
-    "ragg": {
-      "Package": "ragg",
-      "Version": "1.2.5",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "systemfonts",
-        "textshaping"
-      ],
-      "Hash": "690bc058ea2b1b8a407d3cfe3dce3ef9"
-    },
     "readr": {
       "Package": "readr",
       "Version": "2.1.4",
@@ -799,12 +778,6 @@
       "Version": "0.17.3",
       "Source": "Repository",
       "Repository": "RSPM",
-      "RemoteType": "standard",
-      "RemotePkgRef": "renv",
-      "RemoteRef": "renv",
-      "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/jammy/2023-04-20",
-      "RemotePkgPlatform": "x86_64-pc-linux-gnu-ubuntu-22.04",
-      "RemoteSha": "0.17.3",
       "Requirements": [
         "utils"
       ],
@@ -835,27 +808,6 @@
         "utils"
       ],
       "Hash": "c97d05220a4112f461eb940f2633d091"
-    },
-    "rnaturalearthdata": {
-      "Package": "rnaturalearthdata",
-      "Version": "0.1.0",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "sp"
-      ],
-      "Hash": "0d34b89b43e900467e60f5449226f3e3"
-    },
-    "rprojroot": {
-      "Package": "rprojroot",
-      "Version": "2.0.3",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "1de7ab598047a87bba48434ba35d497d"
     },
     "s2": {
       "Package": "s2",
@@ -934,17 +886,6 @@
       "Repository": "RSPM",
       "Hash": "34c16f1ef796057bfa06d3f4ff818a5d"
     },
-    "systemfonts": {
-      "Package": "systemfonts",
-      "Version": "1.0.4",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "cpp11"
-      ],
-      "Hash": "90b28393209827327de889f49935140a"
-    },
     "targets": {
       "Package": "targets",
       "Version": "0.14.3",
@@ -972,18 +913,6 @@
         "yaml"
       ],
       "Hash": "bf748746ce81f412fb06d30d6a2ddec7"
-    },
-    "textshaping": {
-      "Package": "textshaping",
-      "Version": "0.3.6",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "cpp11",
-        "systemfonts"
-      ],
-      "Hash": "1ab6223d3670fac7143202cb6a2d43d5"
     },
     "tibble": {
       "Package": "tibble",
