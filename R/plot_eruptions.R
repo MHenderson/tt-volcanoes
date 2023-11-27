@@ -13,6 +13,7 @@ plot_eruptions <- function(X, world) {
     ggplot() +
     geom_sf(data = countries_to_plot_sf, alpha = .5, size = .2, fill = "white") +
     geom_sf(aes(colour = vei, size = vei), alpha = 0.5) +
+    coord_sf(xlim = c(-5500000, 15500000)) +
     theme_void() +
     theme(legend.position = "bottom") +
     scale_colour_gradient(trans = "reverse") +
