@@ -1,7 +1,3 @@
-
-# volcano-eruptions
-
-<!-- badges: start -->
-<!-- badges: end -->
+# tt-volcanoes
 
 ![](img/eruptions.png)
